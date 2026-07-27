@@ -29,7 +29,7 @@ useEffect(() => {
 
     try {
       const res = await axios.get(
-        `http://localhost:5000/bag/${user._id}`
+        `https://myntra-clone-2wac.onrender.com/bag/${user._id}`
       );
 
       setBagItems(res.data);
@@ -54,7 +54,7 @@ useEffect(() => {
       return;
     }
     try {
-      await axios.post(`http://localhost:5000/order/create/${user._id}`, {
+      await axios.post(`https://myntra-clone-2wac.onrender.com/order/create/${user._id}`, {
         shippingAddress: "123 Main Street, Apt 4B, New York, NY, 10001",
         paymentMethod: "Card",
       });

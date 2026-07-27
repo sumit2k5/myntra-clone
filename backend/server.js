@@ -8,7 +8,10 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: "http://localhost:8081",
+  origin: [
+    "http://localhost:8081",
+    "https://myntra-clone-gules.vercel.app"
+  ],
   credentials: true,
 }));
 

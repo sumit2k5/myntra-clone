@@ -13,7 +13,7 @@ export const mergeGuestHistory = async (userId: string) => {
 
     // Server history
     const res = await axios.get(
-      `http://localhost:5000/recently-viewed/${userId}`
+      `https://myntra-clone-2wac.onrender.com/recently-viewed/${userId}`
     );
 
     const serverHistory = res.data;
@@ -40,7 +40,7 @@ export const mergeGuestHistory = async (userId: string) => {
     // Upload missing guest items
     for (const item of latest20) {
       await axios.post(
-        "http://localhost:5000/recently-viewed",
+        "https://myntra-clone-2wac.onrender.com/recently-viewed",
         {
           userId,
           productId: item.productId._id,

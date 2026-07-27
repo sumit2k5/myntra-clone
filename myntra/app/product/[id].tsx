@@ -100,19 +100,19 @@ export default function ProductDetails() {
       try {
         setIsLoading(true);
         const product = await axios.get(
-          `http://localhost:5000/product/${id}`
+          `https://myntra-clone-2wac.onrender.com/product/${id}`
         );
         setproduct(product.data);
         if (user) {
   const rec = await axios.get(
-    `http://localhost:5000/recommendations/${user._id}`
+    `https://myntra-clone-2wac.onrender.com/recommendations/${user._id}`
   );
 
   setRecommendations(rec.data);
 }
         if (user) {
   await axios.post(
-    "http://localhost:5000/recently-viewed",
+    "https://myntra-clone-2wac.onrender.com/recently-viewed",
     {
       userId: user._id,
       productId: id,
@@ -192,7 +192,7 @@ const saveGuestHistory = async (product: any) => {
 
   try {
     const res = await axios.post(
-      "http://localhost:5000/wishlist",
+      "https://myntra-clone-2wac.onrender.com/wishlist",
       {
         userId: user._id,
         productId: id,
@@ -227,7 +227,7 @@ const saveGuestHistory = async (product: any) => {
     }
     try {
       setLoading(true);
-      await axios.post(`http://localhost:5000/bag`, {
+      await axios.post(`https://myntra-clone-2wac.onrender.com/bag`, {
         userId: user._id,
         productId: id,
         size: selectedSize,

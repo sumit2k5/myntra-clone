@@ -146,7 +146,7 @@ const [totalPages, setTotalPages] = useState(1);
         try {
           setIsLoading(true);
           const response = await axios.get(
-  `http://localhost:5000/order/user/${user._id}?page=${page}&limit=5`
+  `https://myntra-clone-2wac.onrender.com/order/user/${user._id}?page=${page}&limit=5`
 );
 
 setorder(response.data.orders);
@@ -173,7 +173,7 @@ setTotalPages(response.data.totalPages);
   };
   const handleDownloadReceipt = async (orderId: string) => {
   try {
-    const url = `http://localhost:5000/order/receipt/${orderId}`;
+    const url = `https://myntra-clone-2wac.onrender.com/order/receipt/${orderId}`;
 
     await Linking.openURL(url);
 
@@ -185,7 +185,7 @@ const handleExportCSV = async () => {
   if (!user) return;
 
   try {
-    const url = `http://localhost:5000/order/export/csv/${user._id}`;
+    const url = `https://myntra-clone-2wac.onrender.com/order/export/csv/${user._id}`;
 
     await Linking.openURL(url);
   } catch (error) {

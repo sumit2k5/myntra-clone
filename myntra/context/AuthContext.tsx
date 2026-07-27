@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const login = async (email: string, password: string) => {
     // 👉 Replace with your real API URL
     console.log("LOGIN API CALLED");
-    const res = await axios.post("http://localhost:5000/user/login", {
+    const res = await axios.post("https://myntra-clone-2wac.onrender.com/user/login", {
       email,
       password,
     });
@@ -63,7 +63,7 @@ setIsAuthenticated(true);
   const Signup = async (fullName: string, email: string, password: string) => {
     // 👉 Replace with your real API URL
     console.log("SIGNUP API CALLED");
-    const res = await axios.post("http://localhost:5000/user/signup", {
+    const res = await axios.post("https://myntra-clone-2wac.onrender.com/user/signup", {
       fullName,
       email,
       password,

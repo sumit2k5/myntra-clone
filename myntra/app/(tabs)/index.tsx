@@ -119,15 +119,15 @@ export default function Home() {
     try {
       setIsLoading(true);
 
-      const cat = await axios.get("http://localhost:5000/category");
-      const product = await axios.get("http://localhost:5000/product");
+      const cat = await axios.get("https://myntra-clone-2wac.onrender.com/category");
+      const product = await axios.get("https://myntra-clone-2wac.onrender.com/product");
 
       setcategories(cat.data);
       setproduct(product.data);
 
       if (user) {
         const recent = await axios.get(
-          `http://localhost:5000/recently-viewed/${user._id}`
+          `https://myntra-clone-2wac.onrender.com/recently-viewed/${user._id}`
         );
 
         console.log("Recent:", recent.data);
